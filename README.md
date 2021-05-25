@@ -31,3 +31,22 @@ fmt.Println("s: ", s, " p: ", p)
 ```go
 s:  你好，世界。这是谷歌翻译  p:  Nǐ hǎo, shìjiè. Zhè shì gǔgē fānyì
 ```
+
+## other api
+```go
+method GET
+https://translate.googleapis.com/translate_a/single?client=gtx&sl=zh&tl=en&dt=t&q=xxxx
+```
+注： 此方式最大文本长度1814(中文，其他未测)
+在python中测试
+
+```python
+from urllib.parse import quote
+import requests
+s = "国" * 1814  # the largest length
+res = requests.get(
+    "https://translate.googleapis.com/translate_a/single?client=gtx&sl=zh&tl=en&dt=t&q={}".format(quote(s)),
+    # verify=False
+    )
+print(res.status_code)  # 200
+```
