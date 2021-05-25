@@ -3,7 +3,7 @@
   @File:   translator.go
   @Author: ls
 */
-package google_translate
+package translate
 
 import (
 	"bufio"

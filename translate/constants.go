@@ -3,7 +3,7 @@
   @File:   constants.go
   @Author: ls
 */
-package google_translate
+package translate
 
 var LANGUAGES = map[string]string{
 	"af":    "afrikaans",
