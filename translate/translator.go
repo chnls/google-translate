@@ -59,7 +59,8 @@ func parseRpc(text string, langSrc string, langTgt string) string {
 	randomIndex := rand.Intn(len(GOOGLE_TTS_RPC))
 	rpc := [][][]interface{}{{{GOOGLE_TTS_RPC[randomIndex], string(escapedParameter), nil, "generic"}}}
 	espacedRpc, _ := json.Marshal(rpc)
-	freq := fmt.Sprintf("f.req=%s&", url.QueryEscape(string(espacedRpc)))
+	//freq := fmt.Sprintf("f.req=%s&", url.QueryEscape(string(espacedRpc)))
+	freq := "f.req=" + url.QueryEscape(string(espacedRpc)) + "&"
 	return freq
 }
 
