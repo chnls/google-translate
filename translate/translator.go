@@ -8,8 +8,8 @@ package translate
 import (
 	"bufio"
 	"crypto/tls"
-	"encoding/json"
 	"errors"
+	jsoniter "github.com/json-iterator/go"
 	"fmt"
 	"io"
 	"io/ioutil"
@@ -47,6 +47,8 @@ var doNotKnow1 interface{}
 var doNotKnow2 interface{}
 var other string
 var responseSlice  = [][]interface{}{{&wrb, &rpcIds, &jsonStr, doNotKnow0, doNotKnow1, doNotKnow2, other}}
+
+var json = jsoniter.ConfigCompatibleWithStandardLibrary
 
 func parseRpc(text string, langSrc string, langTgt string) string {
 	GOOGLE_TTS_RPC := []interface{}{"MkEWBc"}
